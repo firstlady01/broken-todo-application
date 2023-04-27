@@ -5,9 +5,9 @@ import './todo-form.scss';
 export const TodoForm = () => {
   const { todos, setTodos } = React.useContext(TodosContext);
   const [task, setTask] = React.useState('');
-  const [errorMessage, setErrorMessage] = React.useState(false);
 
   const handleAddTodo = () => {
+     // Fin an ability to add new task
     if (task.trim().length > 1) {
       const newTodo = {
         id: todos.length,
@@ -17,8 +17,6 @@ export const TodoForm = () => {
       setTodos([...todos, newTodo]);
       setTask('');
     }
-    setErrorMessage(true);
-    // Fin an ability to add new task
   };
 
   const handleKeyUp = (e) => {
